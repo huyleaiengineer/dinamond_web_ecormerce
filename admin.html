@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link href="./asset/fontawesome-free-6.2.0-web/css/all.css"></link>  
+    <script src="./asset/fontawesome-free-6.2.0-web/fontawesome-free-6.2.0-web/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="shortcut icon" href="./asset/img/logo.ico" type="image/x-icon">
+    <!-- Link css -->
+    <link rel="stylesheet" href="./asset/css/base.css">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/responsive.css">
+    <style>
+      body{
+        position: relative;
+      }
+    </style>
+</head>
+<body>  
+    <div class="grid-container">
+        <!-- Header -->
+        <header class="admin-header">
+          <div class="admin-menu-icon" onclick="openSidebar()">
+            <span class="material-icons-outlined">menu</span>
+          </div>
+          <div class="admin-header-left">
+            <span class="material-icons-outlined">search</span>
+          </div>
+          <div class="admin-header-right" onclick="dangxuatAdmin(this)">
+            <span style="font-weight: bold;">ADMIN</span>
+            <span class="material-icons-outlined" >account_circle</span>
+          </div>
+        </header>
+        <!-- End Header -->
+  
+        <!-- Sidebar -->
+        <aside id="admin-sidebar">
+          <div class="sidebar-title">
+            <div class="sidebar-brand">
+              <img src="./asset/img/logo.jpg" alt="">
+            </div>
+            <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+          </div>
+  
+          <ul class="sidebar-list">
+            <li class="sidebar-list-item" id="dashboardBtn">
+              <span class="material-icons-outlined">dashboard</span> THỐNG KÊ
+            </li>
+            <li class="sidebar-list-item" id="customerBtn">
+              <span class="material-icons-outlined" >group</span> QUẢN LÝ KHÁCH HÀNG
+            </li>
+            <li class="sidebar-list-item" id="productBtn">
+              <span class="material-icons-outlined">inventory_2</span> QUẢN LÝ SẢN PHẨM
+            </li>
+            <li class="sidebar-list-item" id="nhapHangBtn"> 
+              <span class="material-icons-outlined">add_shopping_cart</span> NHẬP HÀNG
+            </li>
+            <li class="sidebar-list-item" id="employeeBtn">
+              <span class="material-icons-outlined">badge</span> DANH SÁCH NHÂN VIÊN
+            </li>
+            <li class="sidebar-list-item" id="billBtn">
+              <span class="material-icons-outlined">receipt_long</span>QUẢN LÝ ĐƠN HÀNG
+            </li>
+          </ul>
+        </aside>
+        <!-- End Sidebar -->
+  
+        <!-- Main -->
+        <main class="admin-main-container" id="admin-main-container">
+          <div id="dashboard">
+            <div class="admin-main-title">
+              <h2 class="font-weight-bold" style="margin-bottom: 10px; color: #ff00c4">THỐNG KÊ</h2>
+            </div>
+    
+            <div class="admin-main-cards">
+              <div class="card">
+                <div class="card-inner">
+                  <p class="text-primary">Số sản phẩm</p>
+                  <span class="material-icons-outlined text-blue">inventory_2</span>
+                </div>
+                <span class="text-primary font-weight-bold">249</span>
+              </div>
+    
+              <div class="card">
+                <div class="card-inner">
+                  <p class="text-primary">Doanh thu (nghìn đồng)</p>
+                  <span class="material-icons-outlined text-orange">summarize</span>
+                </div>
+                <span class="text-primary font-weight-bold">83</span>
+              </div>
+    
+              <div class="card">
+                <div class="card-inner">
+                  <p class="text-primary">Lợi nhuận ròng (nghìn đồng)</p>
+                  <span class="material-icons-outlined text-green">summarize</span>
+                </div>
+                <span class="text-primary font-weight-bold">79</span>
+              </div>
+    
+              <div class="card">
+                <div class="card-inner">
+                  <p class="text-primary">Thực vốn (nghìn đồng)</p>
+                  <span class="material-icons-outlined text-red">summarize</span>
+                </div>
+                <span class="text-primary font-weight-bold">56</span>
+              </div>
+    
+            </div>
+            
+            <div class="admin-charts">
+              <div class="charts-card">
+                <p class="chart-title">TOP 5 sản phẩm có lợi nhuận cao nhất</p>
+                <div id="bar-chart"></div>
+              </div>
+    
+              <div class="charts-card">
+                <p class="chart-title">TOP 5 Khách hàng mua nhiều sản phẩm nhất</p>
+                <div id="area-chart"></div>
+              </div>
+    
+            </div>
+          </div>
+
+          <div id="admin-customer">
+            <div class="admin-main-title">
+              <h2 class="font-weight-bold" style="margin-bottom: 10px; color: #ff00c4">QUẢN LÝ KHÁCH HÀNG</h2>
+            </div>
+            <div id="customer-table"></div>
+          </div>
+          <div id="admin-product">
+            <div class="admin-main-title">
+              <h2 class="font-weight-bold" style="margin-bottom: 10px; color: #ff00c4">QUẢN LÝ SẢN PHẨM</h2>
+            </div>
+    
+            <div class="admin-main-cards">
+              <div class="card" id="xoaSanPham">
+                <div class="card-inner">
+                  <p class="text-primary">XÓA</p>
+                  <span class="material-icons-outlined text-blue">delete</span>
+                </div>
+              </div>
+    
+              <div class="card" id="suaSanPham">
+                <div class="card-inner">
+                  <p class="text-primary" >SỬA THÔNG TIN </p>
+                  <span class="material-icons-outlined text-orange">change_circle</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="product-table">
+
+            </div>
+          </div>
+
+          <div id="nhap-hang">
+            <h2 style="margin-bottom: 10px; color: #ff00c4">NHẬP HÀNG</h2>
+            <form id="nhapHang">
+              <div class="left">
+                <div>
+                  <label for="tenHang">Tên sản phẩm</label>
+                  <input type="text" name="tenHang" id="tenHang" required placeholder="Tên sản phẩm">
+                </div>
+  
+                <div>
+                  <label for="gia_nhap">Giá nhập (đơn vị: nghìn VNĐ)</label>
+                  <input type="number" name="gia_nhap" id="gia_nhap" required min=1 placeholder="Giá nhập (đơn vị: nghìn VNĐ)">
+                </div>
+
+                <div>
+                  <label for="gia_nhap">Giá bán (đơn vị: nghìn VNĐ)</label>
+                  <input type="number" name="gia_ban" id="gia_ban" required min=1 placeholder="Giá bán (đơn vị: nghìn VNĐ)">
+                </div>
+
+                <div>
+                  <label for="so_luong">Số lượng</label>
+                  <input type="number" name="so_luong" id="so_luong" required min=1 placeholder="Số lượng">
+                </div>
+  
+                <div>
+                  <label for="loai">Chọn loại sản phẩm</label>
+                  <input  list="sp" name="loai" id="loai" required>
+                  <datalist id="sp">
+                    <option value="1">Trang sức</option>
+                    <option value="2">Trang sức cưới</option>
+                    <option value="3">Đồng hồ</option>
+                    <option value="4">Kim cương viên</option>
+                  </datalist>
+                </div>
+                <div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="imgContainer">
+                  <img src="" alt="" srcset="">
+                </div>
+                <input type="file" id="upLoadAnhSP" required>
+                <input type="button" class="btn" id="submit" value="NHẬP HÀNG">
+              </div>
+            </form>
+          </div>
+
+          <div id="admin-employee">
+            <div class="admin-main-title">
+              <h2 class="font-weight-bold" style="margin-bottom: 10px; color: #ff00c4">DANH SÁCH NHÂN VIÊN</h2>
+            </div>
+            <div id="employee-table"></div>
+          </div>
+          <div id="admin-bill">
+            <div class="admin-main-title">
+              <h2 class="font-weight-bold">QUẢN LÝ HÓA ĐƠN</h2>
+            </div>
+
+            <div class="admin-main-cards" >
+              <div class="card" id="showDetails">
+                <div class="card-inner">
+                  <p class="text-primary">XEM CHI TIẾT ĐƠN HÀNG</p>
+                  <span class="material-icons-outlined text-blue">info</span>
+                </div>
+              </div>
+              
+              <div class="card">
+                <div class="card-inner">
+                  <input class="text-primary" id="ngayBd" title="Xin vui lòng nhập đúng định dạng" 
+                  placeholder="bắt đầu: năm-tháng-ngày"></input>
+                  <input class="text-primary" id="ngayKt"  title="Xin vui lòng nhập đúng định dạng"
+                  placeholder="Kết thúc: năm-tháng-ngày "></input>
+                  <span class="material-icons-outlined text-orange" id="locSanPham">filter_list</span>
+                </div>
+              </div>
+            </div>
+           <div id="bill-table"></div>
+           </div>
+        </main>
+        <!-- End Main -->
+  
+    </div>
+
+    <div id="admin-modal">
+      
+    </div>
+    <div id="admin-modal1">
+    </div>
+
+  
+      <!-- Scripts -->
+      <!-- ApexCharts -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.3/apexcharts.min.js"></script>
+      <!-- Custom JS -->
+      <script src="./js/Validator.js"></script>
+      <script src="./js/Customer.js"></script>
+      <script src="./js/Products.js"></script>
+    <script src="./js/Bill.js"></script>
+    <script src="./js/Employee.js"></script>
+    <script src="./js/admin.js"></script>
+
+    
+</body>
+</html>

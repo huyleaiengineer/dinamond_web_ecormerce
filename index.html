@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/css/base.css">
+    <link rel="stylesheet" href="./asset/css/style.css">
+    <link rel="stylesheet" href="./asset/css/responsive.css">
+    <!-- <script src="https://kit.fontawesome.com/afe37fe84d.js" crossorigin="anonymous"></script> -->
+    <link href="./asset/fontawesome-free-6.2.0-web/css/all.css"></link>  
+    <script src="./asset/fontawesome-free-6.2.0-web/fontawesome-free-6.2.0-web/js/all.js"></script>
+    <link rel="shortcut icon" href="./asset/img/logo.ico" type="image/x-icon">
+    <title>Cửa hàng trang sức HTPP</title>
+</head>
+<body>
+    <div id="app">
+        <div id="app-header">
+            <div class="app-header-left">
+                <div class="header-logo"><img src="./asset/img/logo.jpg" alt="Logo của công ty"></div>
+            </div>
+            <div class="app-header-right">
+                <div class="app-header-right-above">
+                    <div class="header-search">
+                        <input type="text" name="reasultSearch" id="reasultSearch" 
+                        placeholder="Nhập tên sản phẩm muốn tìm kiếm">
+                        <span class="search-icon" id="searchBtn"><i class="fas fa-search"></i></span>
+                    </div>
+                    <div class="fillter-search">
+                        <span class="fillter-icon" id="fillterBtn" title="Lọc theo một số từ khóa">
+                            <i class="fa-solid fa-filter"></i></span>
+                    </div>
+                    <div class="header-user">
+                        <ul class="header-user-list">
+                            <li class="header-user-item" id="signupBtn">Đăng ký</li>
+                            <li class="header-user-item" id="loginBtn">Đăng nhập</li>
+                            <div id="GioHang"></div>
+                        </ul>
+                    </div>
+                </div>
+                <nav id="app-nav" class="app-header-right-below">
+                    <ul class="app-nav-list">
+                        <li class="app-nav-item" id="home">Trang chủ</li>
+                        <li class="app-nav-item" id="jewel">Trang sức</li>
+                        <li class="app-nav-item" id="jewelMary">Trang sức cưới</li>
+                        <li class="app-nav-item" id="watch">Đồng hồ</li>
+                        <li class="app-nav-item" id="dinamod">Kim cương viên</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div id="app-body">
+            <div id="app-body1">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                      <div class="numbertext">1 / 3</div>
+                      <img src= "E:\11_doAnWebCuoiKy\asset\img\slider1\sl1.jpg" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">2 / 3</div>
+                      <img src= "E:\11_doAnWebCuoiKy\asset\img\slider1\sl2.jpg" style="width:100%">
+                    </div>
+                    
+                    <div class="mySlides fade">
+                      <div class="numbertext">3 / 3</div>
+                      <img src= "E:\11_doAnWebCuoiKy\asset\img\slider1\sl3.jpg"  style="width:100%">
+                    </div>
+                </div>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                </div>
+                <div class="app-main">
+                    <h2 class="row-heading">Sản phẩm nổi bật</h2>
+                    <div class="gallery">
+                        <div class="gallery-content">
+                            <p style="display:none">SP008</p>
+                            <img src=".\asset\img\j9.png" alt="">
+                            <h3>Mặt dây chuyền Kim cương Vàng trắng 14K PNJ DDDDW000636</h3>
+                            <div class="price">
+                                <h5 class="old-price">19.990.000 VNĐ</h5>
+                                <h5 class="new-price">17.990.000 VNĐ</h5>
+                            </div>
+                            
+                            <button class="buyBtn" onclick="MuaSanPham(this)">Mua Ngay</button>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p style="display:none">SP007</p>
+                            <img src=".\asset\img\j7.png" alt="">
+                            <h3>Nhẫn Vàng trắng 14K PNJ DDDDW0000936 4 chỉ</h3>
+                            <div class="price">
+                                <h5 class="old-price">19.990.000 VNĐ</h5>
+                                <h5 class="new-price">17.990.000 VNĐ</h5>
+                            </div>
+                        
+                            <button class="buyBtn" onclick="MuaSanPham(this)">Mua Ngay</button>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p style="display:none">SP006</p>
+                            <img src=".\asset\img\mj(9).png" alt="">
+                            <h3>Nhẫn Vàng trắng 14K PNJ DDDDW0000936 4 chỉ</h3>
+                            <div class="price">
+                                <h5 class="old-price">23.990.000 VNĐ</h5>
+                                <h5 class="new-price">20.990.000 VNĐ</h5>
+                            </div>
+                        
+                            <button class="buyBtn" onclick="MuaSanPham(this)">Mua Ngay</button>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p style="display:none">SP005</p>
+                            <img src=".\asset\img\w(9).png" alt="">
+                            <h3>Đồng Hồ Italy Anonimo Nam Automatic Vỏ Đồng Thau AM-1002.07.005.A07</h3>
+                            <div class="price">
+                                <h5 class="old-price">19.990.000 VNĐ</h5>
+                                <h5 class="new-price">17.990.000 VNĐ</h5>
+                            </div>
+                        
+                            <button class="buyBtn" onclick="MuaSanPham(this)">Mua Ngay</button>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p style="display:none">SP004</p>
+                            <img src=".\asset\img\j9.png" alt="">
+                            <h3>Mặt dây chuyền Kim cương Vàng trắng 14K PNJ DDDDW000636</h3>
+                            <div class="price">
+                                <h5 class="old-price">19.990.000 VNĐ</h5>
+                                <h5 class="new-price">17.990.000 VNĐ</h5>
+                            </div>
+                            
+                            <button class="buyBtn" onclick="MuaSanPham(this)">Mua Ngay</button>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p style="display:none">SP001</p>
+                            <img src=".\asset\img\j7.png" alt="">
+                            <h3>Nhẫn Vàng trắng 14K PNJ DDDDW0000936 4 chỉ</h3>
+                            <div class="price">
+                                <h5 class="old-price">19.990.000 VNĐ</h5>
+                                <h5 class="new-price">17.990.000 VNĐ</h5>
+                            </div>
+                        
+                            <button class="buyBtn" onclick="MuaSanPham(this)">Mua Ngay</button>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p style="display:none">SP002</p>
+                            <img src=".\asset\img\mj(9).png" alt="">
+                            <h3>Nhẫn Vàng trắng 14K PNJ DDDDW0000936 4 chỉ</h3>
+                            <div class="price">
+                                <h5 class="old-price">23.990.000 VNĐ</h5>
+                                <h5 class="new-price">20.990.000 VNĐ</h5>
+                            </div>
+                        
+                            <button class="buyBtn" onclick="MuaSanPham(this)">Mua Ngay</button>
+                        </div>
+
+                        <div class="gallery-content">
+                            <p style="display:none">SP003</p>
+                            <img src=".\asset\img\w(9).png" alt="">
+                            <h3>Đồng Hồ Italy Anonimo Nam Automatic Vỏ Đồng Thau AM-1002.07.005.A07</h3>
+                            <div class="price">
+                                <h5 class="old-price">19.990.000 VNĐ</h5>
+                                <h5 class="new-price">17.990.000 VNĐ</h5>
+                            </div>
+                        
+                            <button class="buyBtn" onclick="MuaSanPham(this)">Mua Ngay</button>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="clearFloat"></div>
+            <footer class="app-footer">
+                <div class="footer-col">
+                    <div class="logo"><img src="./asset/img/logo.png" alt="Logp"></div>
+                    <div class="company-info">
+                        <p>Công Ty Cổ Phần Vàng Bạc Đá HTPP</p>
+                        <p> 170E Phan Đăng Lưu, P.3, Q.Phú Nhuận, TP.Hồ Chí Minh</p>
+                         <p>ĐT: 028 39951703 - Fax: 028 3995 1702</p>
+                        <p> Giấy chứng nhận đăng ký doanh nghiệp: 0300521758.</p>
+                        
+                        <p>Tổng đài hỗ trợ (08:00-21:00, miễn phí gọi)</p>
+                        <p>Gọi mua: 1800545457 (phím 1)</p>
+                        <p>Khiếu nại: 1800545457 (phím 2)</p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <p>Câu chuyện HTPP</p>
+                    <ul>
+                        <li>Tuyển dụng</li>
+                        <li>Xuất khẩu</li>
+                        <li>Kinh doanh sỉ</li>
+                        <li>Kiểm định kim cương</li>
+                        <li>Kinh doanh vàng miếng</li>
+                    </ul>
+                    
+                </div>
+                <div class="footer-col">
+                    <p>DỊCH VỤ KHÁCH HÀNG</p>
+                    <ul>
+                        <li>Hướng dẫn đo size trang sức</li>
+                        <li>Mua hàng trả góp</li>
+                        <li>Hướng dẫn mua hàng và thanh toán</li>
+                        <li>Chính sách hoàn tiền</li>
+                        <li>Chính sách giao hàng</li>
+                        <li>Cẩm nang sử dụng trang sức</li>
+                        <li>Chính sách bảo hành thu đổi</li>
+                        <li>Chính sách khách hàng thân thiết</li>
+                        <li>Chính sách bảo mật thông tin khách hàng</li>
+                        <li>Câu hỏi thường gặp</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <p class="col3">KẾT NỐI VỚI CHÚNG TÔI</p>
+                    <div class="social">
+                        <span><i class="fa-brands fa-facebook"></i></span>
+                        <span><i class="fa-brands fa-youtube"></i></span>
+                        <span><i class="fa-brands fa-twitter"></i></span>
+                        <span><i class="fa-brands fa-instagram"></i></span>
+                    </div>
+
+                </div>
+            </footer> 
+        </div>
+
+    </div>
+    <!-- ModalForm -->
+    <div id="modalForm">
+        <input type="radio" name="a1" style="display: none;" id="chk1">
+        <input type="radio" name="a1" style="display: none;" id="chk2">
+            <div class="box">
+            <div class="a">
+                <label for="chk1">Đăng ký  </label>
+                <label for="chk2" id="sup">Đăng ký</label>
+            </div>
+            <div class="b">
+                <form action="" class="frm" id="frm1">
+                <span class="closeBtn"><i class="fas fa-times"></i></span>
+                    <h6 class="title">ĐĂNG KÝ</h6>
+                        <input id="name1" type="text" placeholder="Nhập họ và tên" autocomplete="on">
+                        <span class="erricon"><i class="fas fa-exclamation-triangle"></i></span>
+                        <input id="un1" type="text" placeholder="Nhập tên đăng nhập" autocomplete="on">
+                        <span class="erricon"><i class="fas fa-exclamation-triangle"></i></span>
+                        <input id="email1" type="email" placeholder="Nhập Email" autocomplete="on">
+                        <span class="erricon"><i class="fas fa-exclamation-triangle"></i></span>
+                        <input id="pass1" type="password" placeholder="Nhập mật khẩu">
+                        <span class="erricon"><i class="fas fa-exclamation-triangle"></i></span>
+                        <input id="pass1-c" type="password" placeholder="Xác nhận mật khẩu">
+                        <span class="erricon"><i class="fas fa-exclamation-triangle"></i></span>                   
+                        <input type="button" value="Đăng ký" id="btnSignup">
+                        <span class="erricon"><i class="fas fa-exclamation-triangle"></i></span>
+
+                    <label for="chk1" id="btm">Đăng nhập ở đây!</label>
+                </form>
+            </div>
+            <div class="c">
+                <form action="" class="frm" id="frm2">
+                <span class="closeBtn"><i class="fas fa-times"></i></span>
+                <br/><br/> <br/><br/> <br/><br/>
+                    <h6 class="title">ĐĂNG NHẬP </h6>
+                    
+                        <input id="name2" type="text" placeholder="Tên người dùng" autocomplete="on">
+                        <span class="erricon"><i class="fas fa-exclamation-triangle" autocomplete="on"></i></span>
+
+                        <input id="pass2" type="password" placeholder="Mật khẩu">
+                        <span class="erricon"><i class="fas fa-exclamation-triangle"></i></span>
+
+                        <!-- <span class="erricon"><i class="fas fa-exclamation-triangle"></i></span> -->
+
+                    <input type="button" value="Đăng nhập" id="btnLogin">
+
+                    <label for="chk2" id="btm1">Đăng ký ở đây!</label>
+                </form>
+            </div>
+            <div class="d"></div>
+            <div class="e"></div>
+            </div>  
+    </div>
+    <div id="modal"></div>
+    <div id="index-modal">
+        
+    </div>
+    <script src="./js/Validator.js"></script>
+    <script src="./js/Customer.js"></script>
+    <script src="./js/Products.js"></script>
+    <script src="./js/Bill.js"></script>
+    <script src="./js/Employee.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+</html>
+<!-- 
+    <div id="GioHang">
+                            <h2 class="GioHangHeading">LỊCH SỬ MUA HÀNG</h2>
+                            <div>
+                                <div>
+                                <div class="rowGioHang">
+                                    <p>Tên</p>
+                                    <p>Thành tiền</p>
+                                    <p>Chưa được xác nhận</p>
+                                </div>
+                                <div class="rowGioHang">
+                                    <p>Tên</p>
+                                    <p>Thành tiền</p>
+                                    <p>Chưa được xác nhận</p>
+                                </div>
+                                <div class="rowGioHang">
+                                    <p>Tên</p>
+                                    <p>Thành tiền</p>
+                                    <p>Chưa được xác nhận</p>
+                                </div>
+                                <div class="rowGioHang">
+                                    <p>Tên</p>
+                                    <p>Thành tiền</p>
+                                    <p>Chưa được xác nhận</p>
+                                </div>
+                                <div class="rowGioHang">
+                                    <p>Tên</p>
+                                    <p>Thành tiền</p>
+                                    <p>Chưa được xác nhận</p>
+                                </div>
+                                <div class="rowGioHang btn">Xem thêm về lịch sử đơn hàng</div>
+                            </div>
+                        </div> 
+                    </div>
+ -->
